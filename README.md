@@ -1,4 +1,4 @@
-### Hi there 👋
+### Hi there 👋 This is a placeholder website page for the pix2map project.
 
 <!--
 **pix2map/pix2map** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
