@@ -1,1 +1,412 @@
-This is a placeholder for the project pix2map website
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- This templete is borrowed from AR-NET  -->
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">google.load("jquery", "1.3.2");</script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <link rel="icon" href="assets/favicon.ico">
+
+    <style type="text/css">
+        @import url('https://fonts.cdnfonts.com/css/roboto');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.1px;
+            font-size: 18px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1100px;
+        }
+
+        video.header-vid {
+            height: 140px;
+            border: 1px solid black;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+
+        a:link,
+        a:visited {
+            color: #1367a7;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #208799;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        }
+
+        .title {
+            margin-top: 50px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #182B49;
+        }
+
+        .authors {
+            margin-top: 30px;
+        }
+
+        .institutions {
+            margin-top: 5px;
+        }
+
+        .entities_list td {
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 20px;
+        }
+
+        .logos {
+            width: 900px;
+            margin-top: 10px;
+        }
+
+        .logos td {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .links {
+            margin-top: 20px;
+            font-size: 22px;
+            width: 900px;
+        }
+
+        .qualitative_teaser {
+            margin-top: 10px;
+            margin-bottom: 25px;
+            width: 1100px;
+        }
+
+        .video,
+        .results,
+        .footer {
+            margin-top: 30px;
+            margin-bottom: 35px;
+        }
+
+        .abstract-title,
+        .framework-overview-title,
+        .our-approach-title,
+        .results-title,
+        .video-title {
+            margin-top: 30px;
+            font-size: 32px;
+            color: #182B49;
+            width: 700px;
+        }
+
+        .hlight {
+            font-weight: bold;
+            color: #182B49;
+            display: inline-block;
+            font-size: 18px;
+        }
+
+        .text {
+            font-weight: 300 !important;
+        }
+
+        .abstract {
+            margin-top: 25px;
+            margin-bottom: 35px;
+            text-align: justify;
+            width: 900px;
+            font-size: 18px;
+            line-height: 23px;
+            font-weight: 100 !important;
+        }
+
+        .framework-teaser-img,
+        .our-approach-img {
+            margin-top: 30px;
+            width: 850px;
+        }
+
+        .framework-overview-note,
+        .our-approach-note {
+            margin-top: 20px;
+            margin-bottom: 35px;
+            text-align: justify;
+            width: 900px;
+            font-size: 18px;
+            line-height: 23px;
+        }
+
+        .results-content {
+            margin-top: 30px;
+            display: block;
+        }
+
+        .results-note {
+            width: 400px;
+            display: inline-block;
+            text-align: justify;
+            vertical-align: top;
+            font-size: 18px;
+            line-height: 23px;
+        }
+
+        .results-img {
+            width: 480px;
+            display: inline-block;
+            padding-left: 20px;
+        }
+
+        .video-content {
+            margin-top: 30px;
+        }
+
+        .footer {
+            margin-bottom: 100px;
+        }
+
+        .paperpreview-img {
+            width: 300px;
+        }
+
+        .footer-content {
+            width: 1100px;
+            line-height: 23px;
+        }
+
+        .footer-text {
+            width: 780px;
+            padding-left: 20px;
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+    </style>
+    <title>Pix2Map: Cross-modal Retrieval for Inferring Street Maps from Images</title>
+    <meta property="og:title" content="Pix2Map: Cross-modal Retrieval for Inferring Street Maps from Images">
+    <meta property="og:description" content="Wu et al, Pix2Map: Cross-modal Retrieval for Inferring Street Maps from Images. In CVPR, 2023.">
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.974.0">
+
+    <center class="title">
+        Pix2Map: Cross-modal Retrieval for Inferring Street Maps from Images
+    </center>
+
+    <table align="center" class="entities_list authors">
+        <tbody>
+            <tr>
+                <td align="center">
+                    <span>
+                        <a href="https://xindiwu.github.io/" target="_blank">Xindi Wu</a>
+                        <sup>1*</sup>
+                    </span>
+                </td>
+                <td align="center">
+                    <span>
+                        <a href="https://www.linkedin.com/in/kflau" target="_blank">KwunFung Lau</a>
+                        <sup>1</sup>
+                    </span>
+                </td>
+                <td align="center">
+                    <span>
+                        <a href="https://www.francescoferroni.com/" target="_blank">Francesco Ferroni</a>
+                        <sup>2</sup>
+                    </span>
+                </td>
+                <td align="center">
+                    <span>
+                        <a href="https://dvl.in.tum.de/team/osep/"  target="_blank">Aljoša Ošep </a>
+                        <sup>1</sup>
+                    </span>
+                </td>
+                <td align="center">
+                    <span>
+                        <a href="https://www.cs.cmu.edu/~deva/" target="_blank">Deva Ramanan</a>
+                        <sup>1, 2</sup>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table align="center" class="entities_list institutions">
+        <tbody>
+            <tr>
+                <td>
+                    <center><span>Carnegie Mellon University<sup> 1</sup></span></center>
+                </td>
+                <td>
+                    <center><span>ArgoAI<sup> 2</sup></span></center>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table align="center" width="400px" style="margin-top: 10px">
+        <tbody>
+            <tr>
+                <td align="center" width="150px">
+                    <center>
+                        <span style="font-size:14px">* work done while at CMU, now at Princeton University</span>
+                    </center>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table align="center" class="logos">
+        <tbody>
+            <tr>
+                <td align="center">
+                    <a href="https://cvpr2023.thecvf.com/" target="_blank">
+                        <img alt="CVPR 2023" src="./logos/cvpr.png" width="170">
+                    </a>
+                </td>
+                <td align="center">
+                    <a href="https://www.cmu.edu/" target="_blank">
+                        <img alt="CMU" src="./logos/cmu.png" width="130">
+                    </a>
+                </td>
+                <td align="center">
+                    <a href="http://www.cs.cmu.edu/~deva/" target="_blank">
+                        <img alt="Argo" src="./logos/ARGO.png" width="60" style="margin-left: 80px">
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table align="center" class="links">
+        <tr>
+            <td align="center">
+                <a href="https://cvpr2023.thecvf.com/">🌐 CVPR 2023</a>
+            </td>
+            <td align="center">
+                <a href="https://arxiv.org/pdf/2301.04224.pdf">📄 Paper</a>
+            </td>
+            <td align="center">
+                <a href="https://www.youtube.com/watch?v=18VtggvpynY">📽 Video</a>
+            </td>
+        </tr>
+    </table>
+
+    <center>
+        <img src="./figures/1.png" class="teaser">
+    </center>
+
+    <hr>
+
+    <center>
+        <center class="abstract-title">
+            Abstract
+        </center>
+        <div class="abstract">
+            <span class="text">
+                Self-driving vehicles rely on urban street maps for autonomous navigation. In this paper, we introduce Pix2Map, a method for inferring urban street map topology directly from ego-view images, as needed to continually update and expand existing maps. This is a challenging task, as we need to infer a complex urban road topology directly from raw image data. The main insight of this paper is that this problem can be posed as cross-modal retrieval by learning a joint, cross-modal embedding space for images and existing maps, represented as discrete graphs that encode the topological layout of the visual surroundings. We conduct our experimental evaluation using the Argoverse dataset and show that it is indeed possible to accurately retrieve street maps corresponding to both seen and unseen roads solely from image data. Moreover, we show that our retrieved maps can be used to update or expand existing maps and even show proof-of-concept results for visual localization and image retrieval from spatial graphs.
+            </span>
+        </div>
+    </center>
+
+    <hr>
+
+    <center class="framework-overview">
+        <div class="framework-overview-title">Task overview</div>
+        <img src="./assets/figures/teaser.webp" class="framework-teaser-img">
+        <div class="framework-overview-note" class="text">
+          <div>
+            Problem: Infer topological road maps from images.
+          </div>
+          <div>
+            Challenges:  Learning to map continuous images to discrete graphs (maps) with varying numbers of nodes and topology in bird’s eye view (BEV) is difficult. 
+          </div>
+          <div>
+            Prior works: (jointly) learn a non-linear mapping from image pixels to BEV, and estimate the road layout by generating a discrete spatial graph from detected lane markings.
+          </div>
+
+        </div>
+    </center>
+
+    <hr>
+
+    <center class="our-approach">
+        <div class="our-approach-title">Our approach: </div>
+          
+          Pix2Map returns the graph with the embedding most similar to input image via cross-modal retrieval
+        <img src="./assets/figures/framework_overview.webp" class="our-approach-img">
+        <div class="our-approach-note" class="text">
+            <div>
+              <p>
+        <b>Pix2Map:</b> The <i>graph encoder (bottom)</i> computes a graph embedding vector 
+        \( \phi_{\text{graph}} \) for each street map in a batch. The <i>image encoder, (top)</i> 
+        outputs an image embedding \( \phi_{\text{image}} \) for each corresponding image stack. 
+        We then build a similarity matrix for a batch, that contrasts the image and graph embeddings. 
+        We highlight that the adjacency matrix of a given graph is used as the attention mask 
+        for our transformer-based graph encoder.
+              </p>
+            </div>
+        </div>
+    </center>
+
+    <hr>
+
+    <center class=" results">
+        <div class="results-title">Results</div>
+        <div class="results-content">
+            <div class="results-note" class="text">
+                <div>
+
+                <b>Baseline comparisons.</b> For fair comparisons with the prior art<sup><a href="#ref1">[1]</a></sup>, in this experiment, we (i) train <i>Pix2Map</i> using frontal \(50m \times 50m\) road-graphs (as opposed to our default setting of predicting the surrounding 40m x 40m area). Moreover, we (ii) train <i>Pix2Map</i> with a single frontal view (<i>Pix2Map</i>-Single) to ensure consistent comparisons to baselines. Importantly, even in this setting, our method still outperforms baselines by a large margin 2.6819 in terms of Chamfer distance, as compared to 3.0140 obtained by the closest competitor, TOPO-TR<sup><a href="#ref1">[1]</a></sup>.
+
+                </div>
+              
+            </div>
+            <img src="./figures/3.png" class="results-img">
+        </div>
+    </center>
+
+    <hr>
+
+    <center class="video">
+        <div class="video-title">Video presentation</div>
+        <div class="video-content">
+            <iframe width="854px" height="480px" src="https://www.youtube.com/watch?v=18VtggvpynY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </center>
+
+    <hr>
+
+    <center class="footer">
+        <div class="footer-content">
+            <table align="center">
+                <tbody>
+                    <tr>
+                        <td>
+                            <img class="paperpreview-img" src="./assets/figures/paper_preview.webp">
+                        </td>
+                        <td></td>
+                        <td class="footer-text text">
+                                <div>Xindi Wu, KwunFung Lau, Francesco Ferroni, Aljoša Ošep, Deva Ramanan</div>
+                                <a href="https://vlfom.github.io/RNCDL/">Pix2Map: Cross-modal Retrieval for Inferring Street Maps from Images</a>
+                                <div><i>CVPR 2023</i></div>
+                                <a href="https://arxiv.org/pdf/2301.04224.pdf">📄 Paper</a>
+                                <a href="https://www.youtube.com/watch?v=18VtggvpynY">📽 Video</a>
+                                <a href="https://drive.google.com/file/d/1o0rrnxCcVRtqJNzlM7v9GW-XBPiGqet4/view?usp=sharing">🖼️ Poster</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </center>
+</body>
+
+</html>
